@@ -1,0 +1,27 @@
+{
+  "vehicle": {
+    "regplate": "LR46RTB",
+    "tradeValue": {
+      "value": "5700",
+      "currency": "GBP"
+    },
+    "type": "Motorbike"
+  },
+  "driver": {
+    "name": "James Smith",
+    "age": "36",
+    "fieldB": "2"
+  },
+  "thirdParties": {
+    "1": {
+      "name": "Anna Richards",
+      "regplate": "KR39RTE",
+      "type": "Van"
+    },
+    "2": {
+      "name": "Alex Reyes",
+      "regplate": "SU45ER"
+    },
+    "count": "2"
+  }
+}

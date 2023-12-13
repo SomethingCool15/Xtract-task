@@ -1,0 +1,154 @@
+[
+  {
+    "screenId": "vehicle-details",
+    "title": "Vehicle details",
+    "fields": [
+      {
+        "type": "textInput",
+        "label": "Driver Name",
+        "path": "driver.name",
+        "defaultValue": "Peter Nolan",
+        "testId": "driver.name",
+        "required": true
+      },
+      {
+        "type": "textInput",
+        "label": "Vehicle Regplate",
+        "path": "vehicle.regplate",
+        "testId": "vehicle.regplate"
+      },
+      {
+        "type": "enumInput",
+        "label": "Vehicle Type",
+        "path": "vehicle.type",
+        "testId": "vehicle.type",
+        "values": ["Car", "Van", "Motorbike"],
+        "defaultValue": "Car"
+      },
+      {
+        "type": "integerInput",
+        "label": "Driver Age",
+        "path": "driver.age",
+        "testId": "driver.age",
+        "required": true,
+        "min": 0,
+        "max": 130,
+        "defaultValue": 30
+      },
+      {
+        "type": "integerInput",
+        "label": "Driver Experience",
+        "path": "driver.experience",
+        "testId": "driver.experience",
+        "condition": {
+          "path": "driver.age",
+          "value": 18,
+          "operator": "less"
+        }
+      },
+      {
+        "type": "integerInput",
+        "label": "Driver Field A",
+        "path": "driver.fieldA",
+        "testId": "driver.fieldA",
+        "condition": {
+          "path": "driver.age",
+          "value": 18,
+          "operator": "equal"
+        }
+      },
+      {
+        "type": "integerInput",
+        "label": "Driver Field B",
+        "path": "driver.fieldB",
+        "testId": "driver.fieldB",
+        "condition": {
+          "path": "driver.age",
+          "value": 18,
+          "operator": "greater"
+        }
+      },
+      {
+        "type": "currencyInput",
+        "label": "Vehicle Trade Value",
+        "path": "vehicle.tradeValue",
+        "testId": "vehicle.tradeValue",
+        "min": 0,
+        "max": 1000000,
+        "currencies": ["EUR", "USD", "GBP"]
+      }
+    ]
+  },
+  {
+    "screenId": "third-party-details",
+    "title": "Third Party Details",
+    "fields": [
+      {
+        "type": "enumInput",
+        "label": "Number of third parties",
+        "path": "thirdParties.count",
+        "testId": "thirdParties.count",
+        "values": ["1", "2"],
+        "defaultValue": "1",
+        "required": true
+      },
+      {
+        "type": "textInput",
+        "label": "Third Party Name",
+        "path": "thirdParties.1.name",
+        "testId": "thirdParties.1.name",
+        "defaultValue": "Peter Nolan"
+      },
+      {
+        "type": "textInput",
+        "label": "Third Party Vehicle Regplate",
+        "path": "thirdParties.1.regplate",
+        "testId": "thirdParties.1.regplate"
+      },
+      {
+        "type": "enumInput",
+        "label": "Third Party Vehicle Type",
+        "path": "thirdParties.1.type",
+        "testId": "thirdParties.1.type",
+        "values": ["Car", "Van", "Motorbike"],
+        "defaultValue": "Car"
+      },
+      {
+        "type": "textInput",
+        "label": "Second Third Party Name",
+        "path": "thirdParties.2.name",
+        "testId": "thirdParties.2.name",
+        "defaultValue": "Peter Nolan",
+        "condition": {
+          "path": "thirdParties.count",
+          "value": "2",
+          "operator": "equal"
+        }
+      },
+      {
+        "type": "textInput",
+        "label": "Second Third Party Vehicle Regplate",
+        "path": "thirdParties.2.regplate",
+        "testId": "thirdParties.2.regplate",
+        "condition": {
+          "path": "thirdParties.count",
+          "value": "2",
+          "operator": "equal"
+        }
+      },
+      {
+        "type": "enumInput",
+        "label": "Second Third Party Vehicle Type",
+        "path": "thirdParties.2.type",
+        "testId": "thirdParties.2.type",
+        "values": ["Car", "Van", "Motorbike"],
+        "defaultValue": "Car",
+        "condition": {
+          "path": "thirdParties.count",
+          "value": "2",
+          "operator": "equal"
+        }
+      }
+    ]
+  }
+]
